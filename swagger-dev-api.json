@@ -1,0 +1,482 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "API Documentation",
+    "version": "1.0.0",
+    "title": "Maritime-Academy-API"
+  },
+  "host": "sams-student-api.azurewebsites.net",
+  "tags": [
+    {
+      "name": "Maritime-academy API",
+      "description": "Maritime-academy API list is used to manage all the API's"
+    }
+  ],
+  "schemes": ["https"],
+  "paths": {
+    "/api/v1/studentRegistration": {
+      "post": {
+        "tags": ["Student Management"],
+        "description": "Create New Student",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Create New Student",
+            "schema": {
+              "$ref": "#/definitions/studentRegistration"
+            }
+          }
+        ],
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "The request is OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Authorization failed"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "408": {
+            "description": "Request Timeout"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "504": {
+            "description": "Gateway Timeout"
+          }
+        }
+      }
+    },
+    "/api/v1/getCourseList": {
+      "get": {
+        "tags": ["Student Management"],
+        "description": "API to get courses list",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "The request is OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Authorization failed"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "408": {
+            "description": "Request Timeout"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "504": {
+            "description": "Gateway Timeout"
+          }
+        }
+      }
+    },
+    "/api/v1/getDocumentTypeList": {
+      "get": {
+        "tags": ["Student Management"],
+        "description": "API to get document type list",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "The request is OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Authorization failed"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "408": {
+            "description": "Request Timeout"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "504": {
+            "description": "Gateway Timeout"
+          }
+        }
+      }
+    },
+    "/api/v1/getPaymentTypeList": {
+      "get": {
+        "tags": ["Student Management"],
+        "description": "API to get document type list",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "The request is OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Authorization failed"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "408": {
+            "description": "Request Timeout"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "504": {
+            "description": "Gateway Timeout"
+          }
+        }
+      }
+    },
+    "/api/v1/studentLogin": {
+      "post": {
+        "tags": ["Student Management"],
+        "description": "Student Login using Application id & password sent to email",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Student Login using Application id & password sent to email",
+            "schema": {
+              "$ref": "#/definitions/studentLogin"
+            }
+          }
+        ],
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "The request is OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Authorization failed"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "408": {
+            "description": "Request Timeout"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "504": {
+            "description": "Gateway Timeout"
+          }
+        }
+      }
+    },
+    "/api/v1/saveStudentForm": {
+      "post": {
+        "tags": ["Student Management"],
+        "description": "Save/Update the student information",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Save/Update the student information",
+            "schema": {
+              "$ref": "#/definitions/saveStudentForm"
+            }
+          }
+        ],
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "The request is OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Authorization failed"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "408": {
+            "description": "Request Timeout"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "504": {
+            "description": "Gateway Timeout"
+          }
+        }
+      }
+    },
+    "/api/v1/getStudentRecord/{id}": {
+      "get": {
+        "tags": ["Student Management"],
+        "description": "API to GET existing student detail by student id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "API to GET existing student detail by student id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "The request is OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Authorization failed"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "408": {
+            "description": "Request Timeout"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "504": {
+            "description": "Gateway Timeout"
+          }
+        }
+      }
+    },
+    "/api/v1/getAllStudentList": {
+      "post": {
+        "tags": ["Student Management"],
+        "description": "API to get all student list",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "API to get all student list",
+            "schema": {
+              "$ref": "#/definitions/getAllStudentList"
+            }
+          }
+        ],
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "The request is OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Authorization failed"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "408": {
+            "description": "Request Timeout"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          },
+          "504": {
+            "description": "Gateway Timeout"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "studentRegistration": {
+      "required": ["email", "course_id"],
+      "properties": {
+        "course_id": {
+          "type": "integer",
+          "example": 1
+        },
+        "email": {
+          "type": "string",
+          "example": "test@gmail.com"
+        },
+        "phone_no": {
+          "type": "string",
+          "example": "+919090909090"
+        }
+      }
+    },
+    "studentLogin": {
+      "required": ["application_id", "password"],
+      "properties": {
+        "application_id": {
+          "type": "string",
+          "example": "4"
+        },
+        "password": {
+          "type": "string",
+          "example": "Nsg66Imf"
+        }
+      }
+    },
+    "saveStudentForm": {
+      "required": ["student_id"],
+      "properties": {
+        "student_id": {
+          "type": "integer",
+          "example": "4"
+        },
+        "student_info": {
+          "type": "object",
+          "example": {
+            "first_name": "Roshan",
+            "last_name": "Vilas",
+            "father_name": "Pankaj",
+            "mother_name": "Reena",
+            "grand_father_name": "Rohan",
+            "gender": "male",
+            "nationality": "Indian",
+            "birth_date": "2022-01-22",
+            "birth_place": "pune",
+            "national_number": "7778778",
+            "passport_number": "432432",
+            "accomodation": false
+          }
+        },
+        "funding": {
+          "type": "boolean",
+          "example": true
+        },
+        "funding_info": {
+          "type": "object",
+          "example": {
+            "name": "Dheeraj",
+            "job_name": "piyush",
+            "work_tel_no": "+9189898",
+            "email": "abc@gmail.com",
+            "box_no": "321321",
+            "fax_no": "342343",
+            "origin_country": false
+          }
+        },
+        "family_info": {
+          "type": "array",
+          "example": [
+            {
+              "name": "Dheeraj",
+              "city": "pune",
+              "country": "india",
+              "job_tel_no": "+914432432",
+              "home_tel_no": "+9132432432",
+              "mobile_no": "+91342432423",
+              "email": "abc@gmail.com",
+              "family_member": false
+            }
+          ]
+        },
+        "emergency_contact": {
+          "type": "array",
+          "example": [
+            {
+              "name": "riyaaj",
+              "relative": "brother",
+              "mobile_no": "+91342432423",
+              "address": "21 st. road, pune"
+            }
+          ]
+        },
+        "payment_detail": {
+          "type": "object",
+          "example": {
+            "name": "credit card customer name",
+            "payment_type_id": 1,
+            "payment_no": "8888-4444-4444-444",
+            "transaction_no": "312321321",
+            "fees": 34200
+          }
+        },
+        "local_address": {
+          "type": "object",
+          "example": {
+            "city": "pune",
+            "country": "india",
+            "home_tel_no": "+918989898",
+            "mobile_no": "+91898989",
+            "box_no": "321321",
+            "email": "abc@gmail.com",
+            "origin_country": false
+          }
+        },
+        "origin_country_address": {
+          "type": "object",
+          "example": {
+            "city": "pune",
+            "country": "india",
+            "home_tel_no": "+918989898",
+            "mobile_no": "+91898989",
+            "box_no": "321321",
+            "email": "abc@gmail.com",
+            "origin_country": true
+          }
+        },
+        "student_document": {
+          "type": "array",
+          "example": [
+            {
+              "document_type_id": 3,
+              "file_path": "E:/dsads/dasdsa"
+            }
+          ]
+        },
+        "certificate_info": {
+          "type": "array",
+          "example": [
+            {
+              "year": 2003,
+              "branch": "CSE",
+              "average": 88.9,
+              "country": "india"
+            }
+          ]
+        }
+      }
+    },
+    "getAllStudentList": {
+      "required": ["page_no", "page_size"],
+      "properties": {
+        "page_no": {
+          "type": "integer",
+          "example": "0"
+        },
+        "page_size": {
+          "type": "integer",
+          "example": "10"
+        }
+      }
+    }
+  }
+}
